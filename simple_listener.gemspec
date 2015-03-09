@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = SimpleListener::VERSION
   spec.authors       = ["Tomas Valent"]
   spec.email         = ["equivalent@eq8.eu"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Ruby listener/observer lib}
+  spec.description   = %q{simplest possible Ruby listener lib}
   spec.homepage      = ""
   spec.license       = "MIT"
 
