@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/equivalent/simple_listener.svg)](https://travis-ci.org/equivalent/simple_listener)
+[![Code Climate](https://codeclimate.com/github/equivalent/simple_listener/badges/gpa.svg)](https://codeclimate.com/github/equivalent/simple_listener)
+
 # SimpleListener
 
 Simplest most light-weight possible implementation of Listener / Observer.
