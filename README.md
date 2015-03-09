@@ -1,6 +1,6 @@
 # SimpleListener
 
-TODO: Write a gem description
+Simplest most light-weight possible implementation of Listener / Observer.
 
 ## Installation
 
@@ -12,13 +12,77 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
+## Plain Ruby usage:
 
-    $ gem install simple_listener
+```
+class Book
+  attr_accessor :author_name
 
-## Usage
+  def save
+    call_listeners(:before_create)
+    # ... + do some database stuff
+  end
+end
 
-TODO: Write usage instructions here
+class AssignAuthorListener
+  def initialize(user)
+    @user = user
+  end
+
+  def before_create(resource)
+    resource.author_name = user.name
+  end
+end
+
+require 'ostruct'
+class DummyController
+  def create
+    @book = Book.new
+    @book.add_listener(AssignAuthorListener.new(current_user))
+    @book.save
+
+    # @book.author_name # => Tomas
+  end
+
+  def current_user
+    OpenStruct.new(name: "Tomas")
+  end
+end
+```
+
+## Ruby on Rails usage
+
+
+since Rails 3.something you have the option to do `around_save`.
+
+```
+class Book < ActiveRecord::Base
+  around_save :notify_listeners
+
+  def notify_listeners
+    is_create_save   = !persisted?
+    if is_create_save
+      call_listeners(:before_create)
+    else
+      call_listeners(:before_update)
+    end
+
+    yield # will do the actual saving to DB ...call :save
+
+    if is_create_save
+      call_listeners(:on_create)
+    else
+      call_listeners(:on_update)
+    end
+  end
+end
+```
+
+## Credit
+
+Idea for this gem is based on pattern shown in Avdi Grimm Ruby Tapas episode #031 Observer Variations
+
+All hail Avdi !!!
 
 ## Contributing
 
