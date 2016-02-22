@@ -28,6 +28,8 @@ class Book
 end
 
 class AssignAuthorListener
+  attr_reader :user
+  
   def initialize(user)
     @user = user
   end
