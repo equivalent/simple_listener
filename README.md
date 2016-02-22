@@ -19,6 +19,8 @@ And then execute:
 
 ```
 class Book
+  include SimpleListener
+  
   attr_accessor :author_name
 
   def save
@@ -42,8 +44,10 @@ end
 require 'ostruct'
 class DummyController
   def create
+    my_listener = AssignAuthorListener.new(current_user)
+    
     @book = Book.new
-    @book.add_listener(AssignAuthorListener.new(current_user))
+    @book.add_listener(my_listener)
     @book.save
 
     # @book.author_name # => Tomas
@@ -62,6 +66,8 @@ since Rails 3.something you have the option to do `around_save`.
 
 ```
 class Book < ActiveRecord::Base
+  include SimpleListener
+
   around_save :notify_listeners
 
   def notify_listeners
