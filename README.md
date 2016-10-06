@@ -89,6 +89,8 @@ class Book < ActiveRecord::Base
 end
 ```
 
+For Concern exapmle check https://github.com/equivalent/simple_listener/wiki/Rails-Concern-Example
+
 ## Credit
 
 Idea for this gem is based on pattern shown in Avdi Grimm Ruby Tapas episode #031 Observer Variations
