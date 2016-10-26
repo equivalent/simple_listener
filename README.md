@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/equivalent/simple_listener.svg)](https://travis-ci.org/equivalent/simple_listener)
 [![Code Climate](https://codeclimate.com/github/equivalent/simple_listener/badges/gpa.svg)](https://codeclimate.com/github/equivalent/simple_listener)
+![Gittens](http://gittens.r15.railsrumble.com//badge/equivalent/simple_listener)
 [![Open Thanks](https://thawing-falls-79026.herokuapp.com/images/thanks-3.svg)](https://thawing-falls-79026.herokuapp.com/r/emrbpnuk)
 
 # SimpleListener
