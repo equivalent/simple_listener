@@ -91,7 +91,10 @@ class Book < ActiveRecord::Base
 end
 ```
 
-For Concern exapmle check https://github.com/equivalent/simple_listener/wiki/Rails-Concern-Example
+## More examples:
+
+* For Concern exapmle check https://github.com/equivalent/simple_listener/wiki/Rails-Concern-Example
+* https://github.com/equivalent/simple_listener/wiki#example-1-rails
 
 ## Credit
 
